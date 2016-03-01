@@ -1,0 +1,17 @@
+version: "2"                                   # 版本
+services:                                      # 服务
+  web:                                         # NodeJS 应用
+    image: xuqingkuang/docker-example          # 源自镜像
+    ports:                                     # 端口映射
+     - "80:8000"
+    volumes:                                   # 目录映射
+     - .:/code
+    links:                                     # 关联服务映射 - 重点
+     - mysql
+    command: babel-node /code/server-mysql.js  # 启动后执行命令
+  mysql:                                       # 服务名称
+    image: mysql                               # 服务镜像
+    environment:                               # 服务环境变量
+     - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+     - MYSQL_USER=nodejsapp
+     - MYSQL_PASSWORD=ILoveDocker

@@ -1,0 +1,10 @@
+{
+  "name": "docker-example",
+  "version": "0.0.1",
+  "author": "xuqing.kxq@alibaba-inc.com",
+  "dependencies": {
+    "babel-core": "^6.5.2",
+    "babel-preset-es2015": "^6.5.0",
+    "mysql": "^2.10.2"
+  }
+}
